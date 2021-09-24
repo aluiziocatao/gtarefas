@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Pages;
 
 use App\Controller\Pages\PageController;
 use App\Utils\View;
 
-class Depoimento extends PageController {
+class DepoimentoController extends PageController {
 
     /**
      * Método responsável por retornar o conteúdo da view de depoimentos
