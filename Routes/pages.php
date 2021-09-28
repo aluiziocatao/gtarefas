@@ -19,8 +19,8 @@ $obRouter->get('/sobre', [
 
 //ROTA de DEPOIMENTOS
 $obRouter->get('/depoimentos', [
-    function(){
-        return new Response(200, Pages\DepoimentoController::getDepoimentos());
+    function($request){
+        return new Response(200, Pages\DepoimentoController::getDepoimentos($request));
     }
 ]);
 
