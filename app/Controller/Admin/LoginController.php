@@ -14,11 +14,9 @@ class LoginController extends PageController{
      * @param string $erroMessage
      * @return string
      */
-    public static function getLogin($request, $erroMessage = null) {
+    public static function getLogin($request, $errorMessage = null) {
         //STATUS
-        $status = !is_null($erroMessage) ? View::render('admin/login/status', [
-            'mensagem' => $erroMessage
-        ]) : '';
+        $status = !is_null($errorMessage) ? AlertController::getError($errorMessage) : '';
 
         //RETORNA O CONTEÚDO DA VIEW DO LOGIN
         $content = View::render('admin/login', [
