@@ -7,6 +7,7 @@ use \WilliamCosta\DotEnv\Environment;
 use \WilliamCosta\DatabaseManager\Database;
 use \App\Http\Middleware\Queue;
 use \App\Http\Middleware\Maintenance;
+use App\Http\Middleware\RequireAdminLogout;
 
 //CARREGA VARIÁVEIS DE AMBIENTE
 Environment::load(__DIR__.'/../');
@@ -30,7 +31,9 @@ View::init([
 
 //DEFINE O MAPEAMENTO DE MIDDLEWARES
 Queue::setMap([
-    'maintenance' => Maintenance::class
+    'maintenance' => Maintenance::class,
+    'required-admin-logout' => RequireAdminLogout::class,
+    'required-admin-login' => RequireAdminLogin::class,
 ]);
 
 //DEFINE O MAPEAMENTO DE MIDDLEWARES PADRÕES (EXECUTADOS EM TODAS AS ROTAS)
